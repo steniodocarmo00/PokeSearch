@@ -1,15 +1,19 @@
 import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
 
-export function PokeView(){
+type Props ={
+    name: string;
+}
+
+export function PokeView({name}: Props){
     return(
     <View style={styles.container}>
         <Text style={styles.name}>
-            Pikachu
+            {name}
         </Text>
 
         <View style={styles.pokephoto}>
-            
+               
         </View>
     </View>
     )
