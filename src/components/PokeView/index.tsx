@@ -4,13 +4,14 @@ import { styles } from "./styles";
 type Props ={
     name: string;
     src: string;
+    id: string;
 }
 
-export function PokeView({name, src}: Props){
+export function PokeView({name, src, id}: Props){
     return(
     <View style={styles.container}>
         <Text style={styles.name}>
-            {name}
+            #{id} {name}
         </Text>
 
         <Image 

@@ -1,20 +1,21 @@
 import { StyleSheet } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export const styles = StyleSheet.create({
     container:{
         width: '100%',
-        backgroundColor: '#FFF',
+        height: 120,
+        backgroundColor: '#C7CCDB',
         borderRadius: 10,
         flexDirection: "row",
         alignItems: "center",
-        marginBottom: 10
+        marginBottom: 30    
 
     },
     name:{
         flex: 1,
         fontSize: 20,
-        color: '#1F1E25',
+        fontWeight: 'bold',
+        color: '#2A324B',
         marginLeft: 10
     },
     pokephoto:{

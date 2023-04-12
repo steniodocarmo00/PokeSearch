@@ -5,16 +5,17 @@ import { PokeView } from '../../components/PokeView'
 import api from '../../services/api'
 
 
-interface PokemonResult {
+type PokemonResult = {
     url: string;
 }
 
-interface Sprite {
+type Sprite = {
     front_default: string;
 }
 
-interface Pokemon {
+type Pokemon ={
     name: string;
+    id: string;
     sprites: Sprite;
 }
 
@@ -24,7 +25,7 @@ export function Home() {
     useEffect (() => {
         async function apiPokemons() {
             try {
-                const response = await api.get('https://pokeapi.co/api/v2/pokemon');
+                const response = await api.get('/pokemon?limit=151&offset=0');
                 const pokemonResults: PokemonResult[] = response.data.results;
                 const pokemonDetailsPromises = pokemonResults.map(async (pokemonResult) => {
                     const detailsResponse = await api.get(pokemonResult.url);
@@ -43,7 +44,7 @@ export function Home() {
     return(
         <View style = {styles.container}>
            <Text style = {styles.title}> 
-               PokeApp
+               PokéDex
            </Text>
 
            <FlatList 
@@ -53,6 +54,7 @@ export function Home() {
                 <PokeView
                    key={item.name} 
                    name={item.name}
+                   id={item.id}
                    src={item.sprites.front_default}
                 /> 
                )} 
