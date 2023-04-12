@@ -5,11 +5,14 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#2A324B',
         padding: 25,
-        justifyContent: 'center'
+        alignItems: 'center'
     },
     title: {
         color: '#FFF',
         fontSize: 24,
         textAlign: 'center',
+        fontWeight: 'bold',
+        marginTop: 70,
+        marginBottom: 40
     }
 })
